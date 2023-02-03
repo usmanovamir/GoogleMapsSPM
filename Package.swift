@@ -20,9 +20,12 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "GoogleMaps", resources: [
-            .copy("GoogleMaps.bundle")
-        ]),
+            name: "Bundle",
+            resources: [
+                .copy("Resources/GoogleMaps.bundle")
+            ]
+
+        ),
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework"),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework")
