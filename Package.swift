@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "GoogleMaps",
-            targets: ["GoogleMaps", "GoogleMapsBase", "GoogleMapsCore"]),
+            targets: ["GoogleMaps", "GoogleMapsBundle"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -20,7 +20,7 @@ let package = Package(
     ],
     targets: [
         .target(name: "GoogleMapsBundle", resources: [
-            .copy("Resources/GoogleMaps.bundle")
+            .copy("GoogleMaps.bundle")
         ]),
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework"),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
