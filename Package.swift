@@ -19,7 +19,8 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .target(name: "GoogleMapsBundle", resources: [
+        .target(
+            name: "GoogleMaps", resources: [
             .copy("GoogleMaps.bundle")
         ]),
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework"),
