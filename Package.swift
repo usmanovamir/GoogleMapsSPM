@@ -4,7 +4,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "GoogleMaps",
+    name: "GoogleMapsPackage",
     platforms: [
         .iOS(.v13)
     ],
@@ -12,7 +12,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "GoogleMaps",
-            targets: ["GoogleMaps", "GoogleMapsBundle"]),
+            targets: ["GoogleMaps", "GoogleMapsBundle", "GoogleMapsBase", "GoogleMapsCore"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
