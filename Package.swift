@@ -38,9 +38,6 @@ let package = Package(
                 .target(name: "GoogleMapsCore"),
                 .target(name: "GoogleMaps")
             ],
-            resources: [
-                .process("Resources/GoogleMaps.bundle")
-            ],
             linkerSettings: [
               .linkedLibrary("c++"),
               .linkedLibrary("z"),
