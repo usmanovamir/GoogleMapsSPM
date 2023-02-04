@@ -22,7 +22,7 @@ let package = Package(
         .target(
             name: "GoogleMapsCoreWrapper",
             dependencies: [
-                .target(name: "GoogleMapsBase")
+                .target(name: "GoogleMapsBase"),
                 .target(name: "GoogleMapsCore")
             ]
         ),
