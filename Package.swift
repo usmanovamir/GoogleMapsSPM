@@ -31,7 +31,7 @@ let package = Package(
             dependencies: [
                 .target(name: "GoogleMapsBase")
             ]
-        )
+        ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
     ]
