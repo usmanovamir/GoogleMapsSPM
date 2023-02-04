@@ -11,11 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "GoogleMaps",
-            targets: ["GoogleMapsWrapper", "GoogleMapsCoreWrapper"]
-        ),
-        .library(
-            name: "GoogleMapsBase",
-            targets: ["GoogleMapsBaseWrapper"]
+            targets: ["GoogleMapsWrapper"]
         )
     ],
     targets: [
@@ -26,17 +22,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "GoogleMapsCoreWrapper",
-            dependencies: [
-                .target(name: "GoogleMapsBaseWrapper"),
-                .target(name: "GoogleMapsCore")
-            ]
-        ),
-        .target(
             name: "GoogleMapsWrapper",
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
-                .target(name: "GoogleMapsCoreWrapper"),
+                .target(name: "GoogleMapsCore"),
                 .target(name: "GoogleMaps")
             ]
         ),
