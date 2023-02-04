@@ -14,28 +14,19 @@ let package = Package(
             targets: ["GoogleMapsBase"]
         ),
         .library(
-            name: "GoogleMapsCore",
-            targets: ["GoogleMapsCore"]
-        ),
-        .library(
             name: "GoogleMaps",
-            targets: ["GoogleMaps"]
+            targets: ["GoogleMapsCoreWrapper"]
         ),
-    ],
-    dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-//        .target(
-//            name: "Bundle",
-//            resources: [
-//                .copy("Resources/GoogleMaps.bundle")
-//            ]
-//
-//        ),
+        .target(
+            name: "GoogleMapsCoreWrapper",
+            dependencies: [
+                .target(name: "GoogleMapsBase")
+                .target(name: "GoogleMapsCore")
+            ]
+        ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
-        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )
