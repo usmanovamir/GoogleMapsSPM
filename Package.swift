@@ -39,7 +39,7 @@ let package = Package(
                 .target(name: "GoogleMaps")
             ],
             resources: [
-                .copy("Sources/GoogleMapsWrapper/Resources/GoogleMaps.bundle")
+                .process("Resources/GoogleMaps.bundle")
             ],
             linkerSettings: [
               .linkedLibrary("c++"),
@@ -58,13 +58,3 @@ let package = Package(
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )
-
-/*
- "Accelerate",
-        "CoreTelephony",
-        "CoreText",
-        "GLKit",
-        "ImageIO",
-        "OpenGLES",
-        "QuartzCore"
- */
