@@ -11,11 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "GoogleMaps",
-            targets: ["GoogleMapsWrapper"]
-        ),
-        .library(
-            name: "GoogleMapsCore",
-            targets: ["GoogleMapsCoreWrapper"]
+            targets: ["GoogleMapsWrapper", "GoogleMapsCoreWrapper"]
         ),
         .library(
             name: "GoogleMapsBase",
