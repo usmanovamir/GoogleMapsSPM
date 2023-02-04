@@ -19,21 +19,52 @@ let package = Package(
             name: "GoogleMapsBaseWrapper",
             dependencies: [
                 .target(name: "GoogleMapsBase")
+            ],
+            linkerSettings: [
+                .linkedLibrary("c++"),
+                .linkedLibrary("z"),
+                .linkedFramework("CoreData"),
+                .linkedFramework("CoreGraphics"),
+                .linkedFramework("CoreLocation"),
+                .linkedFramework("QuartzCore"),
+                .linkedLibrary("SystemConfiguration"),
+                .linkedFramework("UIKit")
             ]
         ),
         .target(
             name: "GoogleMapsWrapper",
-            resources: [
-                .copy("Resources/GoogleMaps.bundle")
-            ],
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
                 .target(name: "GoogleMapsCore"),
                 .target(name: "GoogleMaps")
             ],
+            resources: [
+                .copy("Resources/GoogleMaps.bundle")
+            ],
+            linkerSettings: [
+              .linkedLibrary("c++"),
+              .linkedLibrary("z"),
+              .linkedFramework("Accelerate"),
+              .linkedFramework("CoreTelephony"),
+              .linkedFramework("CoreText"),
+              .linkedFramework("GLKit"),
+              .linkedFramework("ImageIO"),
+              .linkedFramework("OpenGLES"),
+              .linkedFramework("QuartzCore")
+            ]
         ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )
+
+/*
+ "Accelerate",
+        "CoreTelephony",
+        "CoreText",
+        "GLKit",
+        "ImageIO",
+        "OpenGLES",
+        "QuartzCore"
+ */
