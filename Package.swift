@@ -4,15 +4,16 @@
 import PackageDescription
 
 let package = Package(
-    name: "GoogleMapsBase",
+    name: "GoogleMaps",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "GoogleMapsBase",
-            targets: ["GoogleMapsBase"]),
+            name: "GoogleMaps",
+            targets: ["GoogleMaps"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,8 +27,8 @@ let package = Package(
 //            ]
 //
 //        ),
-//        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework"),
-//        .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
-        .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework")
+        .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
+        .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
+        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )
