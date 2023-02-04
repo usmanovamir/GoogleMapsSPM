@@ -13,6 +13,14 @@ let package = Package(
             name: "GoogleMaps",
             targets: ["GoogleMapsWrapper"]
         ),
+        .library(
+            name: "GoogleMapsCore",
+            targets: ["GoogleMapsCoreWrapper"]
+        ),
+        .library(
+            name: "GoogleMapsBase",
+            targets: ["GoogleMapsBaseWrapper"]
+        )
     ],
     targets: [
         .target(
