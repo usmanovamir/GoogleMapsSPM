@@ -32,6 +32,7 @@ let package = Package(
             name: "GoogleMapsWrapper",
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
+                .target(name: "GoogleMapsCoreWrapper"),
                 .target(name: "GoogleMaps")
             ]
         ),
