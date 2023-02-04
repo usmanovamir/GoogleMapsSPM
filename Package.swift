@@ -10,15 +10,17 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "GoogleMapsBase",
-            targets: ["GoogleMapsBaseWrapper"]
-        ),
-        .library(
-            name: "GoogleMapsCore",
-            targets: ["GoogleMapsCoreWrapper"]
+            name: "GoogleMaps",
+            targets: ["GoogleMapsWrapper"]
         ),
     ],
     targets: [
+        .target(
+            name: "GoogleMapsBaseWrapper",
+            dependencies: [
+                .target(name: "GoogleMapsBase")
+            ]
+        ),
         .target(
             name: "GoogleMapsCoreWrapper",
             dependencies: [
@@ -27,9 +29,10 @@ let package = Package(
             ]
         ),
         .target(
-            name: "GoogleMapsBaseWrapper",
+            name: "GoogleMapsWrapper",
             dependencies: [
-                .target(name: "GoogleMapsBase")
+                .target(name: "GoogleMapsBaseWrapper"),
+                .target(name: "GoogleMaps")
             ]
         ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
