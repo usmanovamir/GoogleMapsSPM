@@ -23,11 +23,14 @@ let package = Package(
         ),
         .target(
             name: "GoogleMapsWrapper",
+            resources: [
+                .copy("Resources/GoogleMaps.bundle")
+            ],
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
                 .target(name: "GoogleMapsCore"),
                 .target(name: "GoogleMaps")
-            ]
+            ],
         ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
