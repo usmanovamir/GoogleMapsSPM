@@ -14,7 +14,7 @@ let package = Package(
             targets: ["GoogleMapsBaseWrapper"]
         ),
         .library(
-            name: "GoogleMaps",
+            name: "GoogleMapsCore",
             targets: ["GoogleMapsCoreWrapper"]
         ),
     ],
@@ -23,7 +23,6 @@ let package = Package(
             name: "GoogleMapsCoreWrapper",
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
-                .target(name: "GoogleMaps"),
                 .target(name: "GoogleMapsCore")
             ]
         ),
