@@ -39,7 +39,7 @@ let package = Package(
                 .target(name: "GoogleMaps")
             ],
             resources: [
-                .copy("Resources/GoogleMaps.bundle")
+                .copy("Sources/GoogleMapsWrapper/Resources/GoogleMaps.bundle")
             ],
             linkerSettings: [
               .linkedLibrary("c++"),
