@@ -23,6 +23,7 @@ let package = Package(
             name: "GoogleMapsCoreWrapper",
             dependencies: [
                 .target(name: "GoogleMapsBaseWrapper"),
+                .target(name: "GoogleMaps"),
                 .target(name: "GoogleMapsCore")
             ]
         ),
@@ -34,5 +35,6 @@ let package = Package(
         ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
         .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
+        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )
