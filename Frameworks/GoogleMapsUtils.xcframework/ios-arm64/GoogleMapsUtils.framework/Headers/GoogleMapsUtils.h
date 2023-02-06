@@ -40,6 +40,7 @@ FOUNDATION_EXPORT const unsigned char GoogleMapsUtilsVersionString[];
 #import <GoogleMapsUtils/GMUClusterManager+Testing.h>
 #import <GoogleMapsUtils/GMUStaticCluster.h>
 #import <GoogleMapsUtils/GMUClusterIconGenerator.h>
+#import <GoogleMapsUtils/GMUDefaultClusterIconGenerator+Testing.h>
 #import <GoogleMapsUtils/GMUClusterRenderer.h>
 #import <GoogleMapsUtils/GMUDefaultClusterIconGenerator.h>
 #import <GoogleMapsUtils/GMUDefaultClusterRenderer.h>
