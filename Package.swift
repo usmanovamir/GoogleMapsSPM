@@ -10,12 +10,17 @@ let package = Package(
     ],
     products: [
         .library(
+            name: "GoogleMapsUtils",
+            targets: ["GoogleMapsUtils"]
+        ),
+        .library(
             name: "GoogleMaps",
             targets: ["GoogleMaps", "GoogleMapsBase"]
         )
     ],
     targets: [
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
-        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
+        .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework"),
+        .binaryTarget(name: "GoogleMapsUtils", path: "Frameworks/GoogleMapsUtils.xcframework")
     ]
 )
