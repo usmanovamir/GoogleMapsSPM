@@ -2,7 +2,7 @@
 //  GMSCameraUpdate.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -14,7 +14,7 @@
 @class GMSCameraPosition;
 @class GMSCoordinateBounds;
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * GMSCameraUpdate represents an update that may be applied to a GMSMapView.
@@ -39,29 +39,19 @@ NS_ASSUME_NONNULL_BEGIN;
  */
 + (GMSCameraUpdate *)zoomOut;
 
-/**
- * Returns a GMSCameraUpdate that changes the zoom by the specified amount.
- */
+/** Returns a GMSCameraUpdate that changes the zoom by the specified amount. */
 + (GMSCameraUpdate *)zoomBy:(float)delta;
 
-/**
- * Returns a GMSCameraUpdate that sets the zoom to the specified amount.
- */
+/** Returns a GMSCameraUpdate that sets the zoom to the specified amount. */
 + (GMSCameraUpdate *)zoomTo:(float)zoom;
 
-/**
- * Returns a GMSCameraUpdate that sets the camera target to the specified coordinate.
- */
+/** Returns a GMSCameraUpdate that sets the camera target to the specified coordinate. */
 + (GMSCameraUpdate *)setTarget:(CLLocationCoordinate2D)target;
 
-/**
- * Returns a GMSCameraUpdate that sets the camera target and zoom to the specified values.
- */
+/** Returns a GMSCameraUpdate that sets the camera target and zoom to the specified values. */
 + (GMSCameraUpdate *)setTarget:(CLLocationCoordinate2D)target zoom:(float)zoom;
 
-/**
- * Returns a GMSCameraUpdate that sets the camera to the specified GMSCameraPosition.
- */
+/** Returns a GMSCameraUpdate that sets the camera to the specified GMSCameraPosition. */
 + (GMSCameraUpdate *)setCamera:(GMSCameraPosition *)camera;
 
 /**
@@ -106,4 +96,4 @@ NS_ASSUME_NONNULL_BEGIN;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

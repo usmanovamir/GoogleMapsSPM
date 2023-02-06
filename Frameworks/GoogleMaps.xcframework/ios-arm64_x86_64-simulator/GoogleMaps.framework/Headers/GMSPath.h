@@ -2,7 +2,7 @@
 //  GMSPath.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -10,13 +10,13 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * GMSPath encapsulates an immutable array of CLLocationCooordinate2D. All the coordinates of a
  * GMSPath must be valid. The mutable counterpart is GMSMutablePath.
  */
-@interface GMSPath : NSObject<NSCopying, NSMutableCopying>
+@interface GMSPath : NSObject <NSCopying, NSMutableCopying>
 
 /** Convenience constructor for an empty path. */
 + (instancetype)path;
@@ -94,6 +94,7 @@ typedef NS_ENUM(NSUInteger, GMSLengthKind) {
 
 /**@}*/
 
+/** This category is needed in order to have the declaration of GMSLengthKind after GMSPath. */
 @interface GMSPath (GMSPathLength)
 
 /**
@@ -102,11 +103,9 @@ typedef NS_ENUM(NSUInteger, GMSLengthKind) {
  */
 - (double)segmentsForLength:(CLLocationDistance)length kind:(GMSLengthKind)kind;
 
-/**
- * Returns the length of the path, according to |kind|. See GMSLengthKind.
- */
+/** Returns the length of the path, according to |kind|. See GMSLengthKind. */
 - (CLLocationDistance)lengthOfKind:(GMSLengthKind)kind;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

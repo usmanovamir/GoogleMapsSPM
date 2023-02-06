@@ -2,7 +2,7 @@
 //  GMSGeocoder.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2012 Google Inc.
+//  Copyright 2012 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -12,18 +12,16 @@
 
 #import "GMSAddress.h"
 
-NS_ASSUME_NONNULL_BEGIN;
-
 @class GMSReverseGeocodeResponse;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * \defgroup GeocoderErrorCode GMSGeocoderErrorCode
  * @{
  */
 
-/**
- * GMSGeocoder error codes, embedded in NSError.
- */
+/** GMSGeocoder error codes, embedded in NSError. */
 typedef NS_ENUM(NSInteger, GMSGeocoderErrorCode) {
   kGMSGeocoderErrorInvalidCoordinate = 1,
   kGMSGeocoderErrorInternal,
@@ -36,8 +34,7 @@ typedef NS_ENUM(NSInteger, GMSGeocoderErrorCode) {
  *
  * @related GMSGeocoder
  */
-typedef void (^GMSReverseGeocodeCallback)(GMSReverseGeocodeResponse *_Nullable,
-                                          NSError *_Nullable);
+typedef void (^GMSReverseGeocodeCallback)(GMSReverseGeocodeResponse *_Nullable, NSError *_Nullable);
 
 /**
  * Exposes a service for reverse geocoding. This maps Earth coordinates (latitude and longitude) to
@@ -61,7 +58,7 @@ typedef void (^GMSReverseGeocodeCallback)(GMSReverseGeocodeResponse *_Nullable,
 @end
 
 /** A collection of results from a reverse geocode request. */
-@interface GMSReverseGeocodeResponse : NSObject<NSCopying>
+@interface GMSReverseGeocodeResponse : NSObject <NSCopying>
 
 /** Returns the first result, or nil if no results were available. */
 - (nullable GMSAddress *)firstResult;
@@ -71,4 +68,4 @@ typedef void (^GMSReverseGeocodeCallback)(GMSReverseGeocodeResponse *_Nullable,
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

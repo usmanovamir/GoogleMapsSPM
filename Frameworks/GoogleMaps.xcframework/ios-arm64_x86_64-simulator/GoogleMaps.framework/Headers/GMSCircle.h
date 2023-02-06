@@ -2,28 +2,26 @@
 //  GMSCircle.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
 //
 
-#import "GMSOverlay.h"
-
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN;
+#import "GMSOverlay.h"
 
-/**
- * A circle on the Earth's surface (spherical cap).
- */
+NS_ASSUME_NONNULL_BEGIN
+
+/** A circle on the Earth's surface (spherical cap). */
 @interface GMSCircle : GMSOverlay
 
-/** Position on Earth of circle center. */
-@property(nonatomic, assign) CLLocationCoordinate2D position;
+/** Position on Earth of circle center. Ignores invalid positions. */
+@property(nonatomic) CLLocationCoordinate2D position;
 
 /** Radius of the circle in meters; must be positive. */
-@property(nonatomic, assign) CLLocationDistance radius;
+@property(nonatomic) CLLocationDistance radius;
 
 /**
  * The width of the circle's outline in screen points. Defaults to 1. As per GMSPolygon, the width
@@ -31,24 +29,25 @@ NS_ASSUME_NONNULL_BEGIN;
  *
  * Setting strokeWidth to 0 results in no stroke.
  */
-@property(nonatomic, assign) CGFloat strokeWidth;
+@property(nonatomic) CGFloat strokeWidth;
 
 /** The color of this circle's outline. The default value is black. */
-@property(nonatomic, strong, nullable) UIColor *strokeColor;
+@property(nonatomic, nullable) UIColor *strokeColor;
 
 /**
  * The interior of the circle is painted with fillColor. The default value is nil, resulting in no
  * fill.
  */
-@property(nonatomic, strong, nullable) UIColor *fillColor;
+@property(nonatomic, nullable) UIColor *fillColor;
 
 /**
  * Convenience constructor for GMSCircle for a particular position and radius. Other properties will
- * have default values.
+ * have default values. An invalid position will result in an overlay object that cannot be drawn on
+ * the map.
  */
 + (instancetype)circleWithPosition:(CLLocationCoordinate2D)position
                             radius:(CLLocationDistance)radius;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

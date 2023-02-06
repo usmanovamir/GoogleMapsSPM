@@ -2,7 +2,7 @@
 //  GMSTileLayer.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -12,11 +12,11 @@
 
 @class GMSMapView;
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Stub tile that is used to indicate that no tile exists for a specific tile coordinate. May be
- * returned by tileForX:y:zoom: on GMSTileProvider.
+ * returned by tileForX:y:zoom: on GMSTileOverlay.
  */
 FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
 
@@ -24,7 +24,7 @@ FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
  * GMSTileReceiver is provided to GMSTileLayer when a tile request is made, allowing the callback to
  * be later (or immediately) invoked.
  */
-@protocol GMSTileReceiver<NSObject>
+@protocol GMSTileReceiver <NSObject>
 - (void)receiveTileWithX:(NSUInteger)x
                        y:(NSUInteger)y
                     zoom:(NSUInteger)zoom
@@ -57,9 +57,7 @@ FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
                    zoom:(NSUInteger)zoom
                receiver:(id<GMSTileReceiver>)receiver;
 
-/**
- * Clears the cache so that all tiles will be requested again.
- */
+/** Clears the cache so that all tiles will be requested again. */
 - (void)clearTileCache;
 
 /**
@@ -73,7 +71,7 @@ FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
  * Higher |zIndex| value tile layers will be drawn on top of lower |zIndex| value tile layers and
  * overlays. Equal values result in undefined draw ordering.
  */
-@property(nonatomic, assign) int zIndex;
+@property(nonatomic) int zIndex;
 
 /**
  * Specifies the number of pixels (not points) that the returned tile images will prefer to display
@@ -87,19 +85,17 @@ FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
  * on retina devices, to keep the same number of tiles
  * per view as the default value of 256 would give on a non-retina device.
  */
-@property(nonatomic, assign) NSInteger tileSize;
+@property(nonatomic) NSInteger tileSize;
 
 /**
  * Specifies the opacity of the tile layer. This provides a multiplier for the alpha channel of tile
  * images.
  */
-@property(nonatomic, assign) float opacity;
+@property(nonatomic) float opacity;
 
-/**
- * Specifies whether the tiles should fade in. Default YES.
- */
-@property(nonatomic, assign) BOOL fadeIn;
+/** Specifies whether the tiles should fade in. Default YES. */
+@property(nonatomic) BOOL fadeIn;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

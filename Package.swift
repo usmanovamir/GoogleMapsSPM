@@ -11,47 +11,11 @@ let package = Package(
     products: [
         .library(
             name: "GoogleMaps",
-            targets: ["GoogleMapsWrapper"]
+            targets: ["GoogleMaps", "GoogleMapsBase"]
         )
     ],
     targets: [
-        .target(
-            name: "GoogleMapsBaseWrapper",
-            dependencies: [
-                .target(name: "GoogleMapsBase")
-            ],
-            linkerSettings: [
-                .linkedLibrary("c++"),
-                .linkedLibrary("z"),
-                .linkedFramework("CoreData"),
-                .linkedFramework("CoreGraphics"),
-                .linkedFramework("CoreLocation"),
-                .linkedFramework("QuartzCore"),
-                .linkedFramework("SystemConfiguration"),
-                .linkedFramework("UIKit")
-            ]
-        ),
-        .target(
-            name: "GoogleMapsWrapper",
-            dependencies: [
-                .target(name: "GoogleMapsBaseWrapper"),
-                .target(name: "GoogleMapsCore"),
-                .target(name: "GoogleMaps")
-            ],
-            linkerSettings: [
-              .linkedLibrary("c++"),
-              .linkedLibrary("z"),
-              .linkedFramework("Accelerate"),
-              .linkedFramework("CoreTelephony"),
-              .linkedFramework("CoreText"),
-              .linkedFramework("GLKit"),
-              .linkedFramework("ImageIO"),
-              .linkedFramework("OpenGLES"),
-              .linkedFramework("QuartzCore")
-            ]
-        ),
         .binaryTarget(name: "GoogleMapsBase", path: "Frameworks/GoogleMapsBase.xcframework"),
-        .binaryTarget(name: "GoogleMapsCore", path: "Frameworks/GoogleMapsCore.xcframework"),
         .binaryTarget(name: "GoogleMaps", path: "Frameworks/GoogleMaps.xcframework")
     ]
 )

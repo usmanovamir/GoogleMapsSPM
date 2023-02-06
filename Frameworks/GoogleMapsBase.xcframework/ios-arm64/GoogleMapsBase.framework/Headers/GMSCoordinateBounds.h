@@ -2,7 +2,7 @@
 //  GMSCoordinateBounds.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -10,7 +10,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * GMSCoordinateBounds represents a rectangular bounding box on the Earth's surface.
@@ -25,8 +25,8 @@ NS_ASSUME_NONNULL_BEGIN;
 @property(nonatomic, readonly) CLLocationCoordinate2D southWest;
 
 /**
- * Returns NO if this bounds does not contain any points. For example,
- * [[GMSCoordinateBounds alloc] init].valid == NO.
+ * Returns NO if this bounds does not contain any points. For example, [[GMSCoordinateBounds alloc]
+ * init].valid == NO.
  *
  * When an invalid bounds is expanded with valid coordinates via includingCoordinate: or
  * includingBounds:, the resulting bounds will be valid but contain only the new coordinates.
@@ -72,4 +72,4 @@ NS_ASSUME_NONNULL_BEGIN;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

@@ -2,7 +2,7 @@
 //  GMSCoordinateBounds+GoogleMaps.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2013 Google Inc.
+//  Copyright 2013 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -14,30 +14,23 @@
 #else
 #import <GoogleMapsBase/GoogleMapsBase.h>
 #endif
-
 #import "GMSProjection.h"
 
 @class GMSPath;
 
-NS_ASSUME_NONNULL_BEGIN;
+NS_ASSUME_NONNULL_BEGIN
 
 @interface GMSCoordinateBounds (GoogleMaps)
 
-/**
- * Inits with bounds that encompass |region|.
- */
+/** Inits with bounds that encompass |region|. */
 - (id)initWithRegion:(GMSVisibleRegion)region;
 
-/**
- * Inits with bounds that encompass |path|.
- */
+/** Inits with bounds that encompass |path|. */
 - (id)initWithPath:(GMSPath *)path;
 
-/**
- * Returns a GMSCoordinateBounds representing the current bounds extended to include |path|.
- */
+/** Returns a GMSCoordinateBounds representing the current bounds extended to include |path|. */
 - (GMSCoordinateBounds *)includingPath:(GMSPath *)path;
 
 @end
 
-NS_ASSUME_NONNULL_END;
+NS_ASSUME_NONNULL_END

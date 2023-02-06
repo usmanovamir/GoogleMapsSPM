@@ -2,7 +2,7 @@
 //  GMSProjection.h
 //  Google Maps SDK for iOS
 //
-//  Copyright 2012 Google Inc.
+//  Copyright 2012 Google LLC
 //
 //  Usage of this SDK is subject to the Google Maps/Google Earth APIs Terms of
 //  Service: https://developers.google.com/maps/terms
@@ -20,7 +20,6 @@
  * view.
  */
 typedef struct {
-
   /** Bottom left corner of the camera. */
   CLLocationCoordinate2D nearLeft;
 
@@ -42,7 +41,8 @@ typedef struct {
  * Passing invalid Earth coordinates (i.e., per CLLocationCoordinate2DIsValid) to this object may
  * result in undefined behavior.
  *
- * This class should not be instantiated directly, instead, obtained via projection on GMSMapView.
+ * This class should not be instantiated directly unless under testing conditions. Instead, obtain
+ * it via projection on GMSMapView.
  */
 @interface GMSProjection : NSObject
 
@@ -59,9 +59,7 @@ typedef struct {
 - (CGFloat)pointsForMeters:(CLLocationDistance)meters
               atCoordinate:(CLLocationCoordinate2D)coordinate;
 
-/**
- * Returns whether a given coordinate (lat/lng) is contained within the projection.
- */
+/** Returns whether a given coordinate (lat/lng) is contained within the projection. */
 - (BOOL)containsCoordinate:(CLLocationCoordinate2D)coordinate;
 
 /**
